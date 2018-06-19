@@ -1,0 +1,8 @@
+.idea
+dist/
+node_modules
+npm-debug.log
+.npmrc
+.DS_Store
+retail-ui-dist
+react-ui-dist
