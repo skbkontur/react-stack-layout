@@ -38,7 +38,6 @@ export interface FitProps {
     tag?: string | React.ComponentType;
     className?: string;
     children?: React.ReactNode;
-    nextGap?: number;
     style?: React.CSSProperties;
     title?: null | string;
     htmlFor?: null | string;
