@@ -5,9 +5,9 @@ import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 const analyze = false;
-const PROD: boolean = process.env.NODE_ENV === "production";
+let PROD: boolean = process.env.NODE_ENV === "production";
 const webpackMode = PROD ? "production" : "development";
-
+PROD = true;
 const config: webpack.Configuration = {
     mode: webpackMode,
     entry: {
@@ -16,7 +16,7 @@ const config: webpack.Configuration = {
     output: {
         path: path.resolve(path.join(__dirname, "..", "..", "react-stack-layout-docs")),
         publicPath: PROD ? "/react-stack-layout/" : "/",
-        filename: PROD ? "[name].[chunkhash].js" : "[name].js",
+        filename: PROD ? "[name].[hash].js" : "[name].js",
     },
     module: {
         rules: [
@@ -76,7 +76,7 @@ const config: webpack.Configuration = {
     },
     plugins: [
         ...(PROD ? [new MiniCssExtractPlugin({
-              filename: "[name].[chunkhash].css",
+              filename: "[name].[hash].css",
           })] : []),
         new HtmlWebpackPlugin({
             template: "./src/index.html",
@@ -85,11 +85,6 @@ const config: webpack.Configuration = {
       ],
     resolve: {
         extensions: [".tsx", ".ts", ".js", ".jsx"],
-        alias: {
-            Styles: path.join(__dirname, "src/Styles"),
-            Domain: path.join(__dirname, "src/Domain"),
-            Commons: path.join(__dirname, "src/Commons"),
-        },
     },
 };
 

@@ -1,8 +1,6 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 import { ColumnStack, Fill, Fit, Fixed, RowStack } from "@skbkontur/react-stack-layout";
-import "../../Styles/Reset.less";
-import "../../Styles/Typography.less";
 import cn from "./DocumentationEntry.less";
 import { Code } from "../Code/Code";
 import Link from "@skbkontur/react-ui/components/Link/Link";
@@ -487,20 +485,13 @@ export class DocumentationEntry extends React.Component {
                 </ColumnStack>
             </div>
             <h3 id="shorthands">Shorthand properties</h3>
-            <p>Чтобы всё время не писать verticalAlign или horizontalAlign есть простые сокращения:</p>
+            <p>Для частых случаев verticalAlign или horizontalAlign есть простые сокращения:</p>
             <Code>{`
                 <RowStack baseline />
-                <RowStack top />
-                <RowStack bottom />
-                <RowStack stetch />
-                <RowStack center />
             `}</Code>
             <p>И для ColumnStack:</p>
             <Code>{`
-                <RowStack left />
-                <RowStack right />
-                <RowStack stetch />
-                <RowStack center />
+                <RowStack stretch />
             `}</Code>
             <h2 id="usage">Сценарии использования</h2>
             <p>
