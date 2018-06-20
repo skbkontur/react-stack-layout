@@ -52,3 +52,8 @@ import { ColumnStack, RowStack, Fill, Fit, Fixed } from "@skbkontur/react-stack-
 ```
 
 ### [Документация](http://tech.skbkontur.ru/react-stack-layout/)
+
+* [Как использовать](http://tech.skbkontur.ru/react-stack-layout/#how)
+* [Сценарии использования](http://tech.skbkontur.ru/react-stack-layout/#usage)
+* [Известные недостатки](http://tech.skbkontur.ru/react-stack-layout/#bugs)
+* [API Reference](http://tech.skbkontur.ru/react-stack-layout/#api)
