@@ -7,7 +7,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 const analyze = false;
 let PROD: boolean = process.env.NODE_ENV === "production";
 const webpackMode = PROD ? "production" : "development";
-PROD = true;
+
 const config: webpack.Configuration = {
     mode: webpackMode,
     entry: {

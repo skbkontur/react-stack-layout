@@ -70,7 +70,8 @@ export class DocumentationEntry extends React.Component {
                     <li><Link href="#shorthands">Shorthand properties</Link></li>
                 </ul>
                 <li><Link href="#usage">Сценарии использования</Link></li>
-                <li><Link href="#bugs">Известные</Link></li>
+                <li><Link href="#bugs">Известные недостатки</Link></li>
+                <li><Link href="#api">API Reference</Link></li>
             </ul>
 
             <h2 id="why">Обоснование</h2>
@@ -552,6 +553,73 @@ export class DocumentationEntry extends React.Component {
                 <li>есть несколько багов (help wanted!).</li>
                 <li>Проблемы с вертикальным Fill. Пользоваться им иногда не очень удобно.</li>
                 <li>Fixed не работает с ColumnStack.</li>
+            </ul>
+
+            <h2 id="api">API Reference</h2>
+
+            <h3>{`<RowStack />`}</h3>
+            <p>Контейнерынй элемент, внутри которого непосредственными детьми должны располагаться placeholder-ы (Fit, Fixed или Fill). Располагает элементы горизонтально.</p>
+            <h4>Props</h4>
+            <ul>
+                <li>
+                    <code>verticalAlign?: "top" | "bottom" | "center" | "baseline" | "stretch";</code>
+                    <p>(default = "top") Определяет вертикальное положение placeholder-ов внутри контейнера</p>
+                </li>
+                <li>
+                    <code>baseline?: boolean;</code>
+                    <p>Сокращение для verticalAlign="baseline". Если значение verticalAlign задано, будет сгенерировано исключение.</p>
+                </li>
+                <li>
+                    <code>block?: boolean;</code>
+                    <p>Меняет display элмента на flex. По умочанию контейнер inline-flex.</p>
+                </li>
+                <li>
+                    <code>inline?: boolean;</code>
+                    <p>Меняет display элмента на inline-flex.</p>
+                </li>
+                <li>
+                    <code>gap?: number;</code>
+                    <p>Задаёт разрыв между элементами в условных единицах. gap={1} - разрыв в 5px.</p>
+                </li>
+            </ul>
+
+            <h3>{`<ColumnStack />`}</h3>
+            <p>Контейнерынй элемент, внутри которого непосредственными детьми должны располагаться placeholder-ы (Fit или Fill). Располагает элементы столбцом.</p>
+            <ul>
+                <li>
+                    <code>horizontalAlign?: "left" | "right" | "center" | "stretch";</code>
+                    <p>(default = "left") Определяет горизонтальное положение placeholder-ов внутри контейнера</p>
+                </li>
+                <li>
+                    <code>stretch?: boolean;</code>
+                    <p>Сокращение для horizontalAlign="stretch". Если значение horizontalAlign задано, будет сгенерировано исключение.</p>
+                </li>
+                <li>
+                    <code>block?: boolean;</code>
+                    <p>Меняет display элмента на flex. По умочанию контейнер inline-flex.</p>
+                </li>
+                <li>
+                    <code>inline?: boolean;</code>
+                    <p>Меняет display элмента на inline-flex.</p>
+                </li>
+                <li>
+                    <code>gap?: number;</code>
+                    <p>Задаёт разрыв между элементами в условных единицах. gap={1} - разрыв в 5px.</p>
+                </li>
+            </ul>
+
+
+            <h3>{`<Fit />`}</h3>
+            <p>Элемент-placeholder. Занимает пространство соотв. своему контенту</p>
+
+            <h3>{`<Fill />`}</h3>
+            <p>Элемент-placeholder. Занимает все доступное пространство контейнера.</p>
+
+            <h3>{`<Fixed />`}</h3>
+            <p>Элемент-placeholder. Занимает заданный размер. Применим только внутри RowStack.</p>
+            <ul>
+                <li>width: number;</li>
+                <p>Обязательный параметр. Соотв. ширине занимаемой в контейнере.</p>
             </ul>
         </div>;
     }
