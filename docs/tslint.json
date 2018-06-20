@@ -1,0 +1,21 @@
+{
+    "extends": [
+        "tslint-config-prettier",
+        "tslint-plugin-prettier",
+        "./.linters/tslint/typescript.json",
+        "./.linters/tslint/functionality.json",
+        "./.linters/tslint/maintainability.json",
+        "./.linters/tslint/style.json"
+    ],
+    "rules": {
+        "prettier": true
+    },
+    "rulesDirectory" : [
+        "./.linters/tslint"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "src/Domain/EDI/**/*.tsx"
+        ]
+    }
+}
