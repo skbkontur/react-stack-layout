@@ -37,7 +37,7 @@ export class DocumentationEntry extends React.Component {
     public render(): JSX.Element {
         return <div className={cn("root")}>
             <Helmet>
-                <title>React Stack Layout Docs</title>
+                <title>React Stack Layout Documentation</title>
             </Helmet>
             <h1>
                 <RowStack block baseline>
@@ -57,8 +57,6 @@ export class DocumentationEntry extends React.Component {
 
             <h3>Оглавление</h3>
             <ul>
-                <li><Link href="#why">Обоснование</Link></li>
-                <li><Link href="#idea">Идея</Link></li>
                 <li><Link href="#why">Обоснование</Link></li>
                 <li><Link href="#idea">Идея</Link></li>
                 <li><Link href="#what">Что имеем?</Link></li>
@@ -82,7 +80,7 @@ export class DocumentationEntry extends React.Component {
             </p>
             <p>
                 В этой библиотеке я обобщил самые частые сценарии расположения контролов и создал несколько удобных
-                абстракций построенных поверх flex'а.
+                абстракций построенных поверх flexbox.
             </p>
             <p>
                 Плюс ещё маленький бонус: такой код понятен любому.
@@ -91,7 +89,7 @@ export class DocumentationEntry extends React.Component {
             <h2 id="idea">Идея</h2>
             <p>
                 Предположим требуется расположить несколько контролов определённым образом. Вместо того, чтобы делать
-                добавочные стили к элементам, предлагается создать шаблон (или каркас) с placeholder-ами внутрь
+                добавочные стили к элементам, предлагается создать шаблон (или каркас) с placeholder-ами, внутри
                 которых разместить нужные элементы.
             </p>
 
@@ -99,32 +97,37 @@ export class DocumentationEntry extends React.Component {
 
             <h3>Корневые элементы</h3>
             <ul>
-                <li>RowStack — располагает дочерние элементы в строку</li>
-                <li>ColumnStack — располагает дочерние элементы колонкой, друг под другом</li>
+                <li>RowStack — располагает дочерние элементы в строку.</li>
+                <li>ColumnStack — располагает дочерние элементы колонкой, друг под другом.</li>
             </ul>
 
             <h3>Placeholder-ы</h3>
             <ul>
-                <li>Fit — принимает размер, соотвествующий своему контенту</li>
-                <li>Fill — занимает всю доступную область</li>
-                <li>Fixed — имеет фиксированные размер</li>
+                <li>Fit — принимает размер, соотвествующий своему контенту.</li>
+                <li>Fill — занимает всю доступную область.</li>
+                <li>Fixed — имеет фиксированный размер.</li>
             </ul>
 
             <h2 id="how">Как использовать</h2>
+
             <h3 id="install">Установка</h3>
+
             <Code>{`npm install @skbkontur/react-stack-layout`}</Code>
             <p>или</p>
             <Code>{`yarn add @skbkontur/react-stack-layout`}</Code>
             <p>и подключаем</p>
             <Code>{`import { ColumnStack, RowStack, Fill, Fit, Fixed } from "@skbkontur/react-stack-layout";`}</Code>
+
+
             <h3 id="row-stack">RowStack</h3>
+
             <p>
-                Располагает элементы в строку и имеет два основных свойства <code>verticalAlign</code>code> и <code>gap</code>code>.
-                Не переносил элементы на следующую строку, если не хватает доступного пространства.</p>
+                Располагает элементы в строку и имеет два основных свойства: <code>verticalAlign</code> и <code>gap</code>.
+                Не переносит элементы на следующую строку, если не хватает доступного пространства.</p>
             <ul>
                 <li>
                     <code>verticalAlign</code> принимает значения <code>top</code>, <code>bottom</code>, <code>center</code>, <code>baseline</code> или <code>stretch</code> и
-                    определяет, как будет расположен <strong>placeholder</strong> по вертикали внутри котейнера.
+                    определяет, как будет расположен placeholder по вертикали внутри котейнера.
                 </li>
                 <li><code>gap</code> определяет горизонтальное расстояние между placeholder-ами</li>
             </ul>
@@ -153,20 +156,21 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
             <p>
-                Для того чтобы было понятны соотношения и размеры элементов:
+                Для того чтобы были понятны соотношения и размеры элементов:
             </p>
             <ul>
                 <li>
                     <span className={cn("grey-border")}/> — серой рамкой обозначен родительский элемент, в котором
-                    находить контейнер
+                    находится контейнер.
                 </li>
                 <li>
-                    <span className={cn("blue-border")}/> — красной рамкой обозначен контейнер
+                    <span className={cn("blue-border")}/> — синей рамкой обозначен контейнер (RowStack или ColumnStack).
                 </li>
                 <li>
-                    <span className={cn("red-border")}/> — красной рамкой обозначен placeholder для контента
+                    <span className={cn("red-border")}/> — красной рамкой обозначен placeholder (Fit, Fill или Fixed) для контента.
                 </li>
             </ul>
+
             <p>Таким образом, базовый пример выглядит так:</p>
             <p>
                 <div className={cn("root-item")}>
@@ -175,6 +179,7 @@ export class DocumentationEntry extends React.Component {
                     </RowStack>
                 </div>
             </p>
+
             <p>Свойство gap добавляет разрывы между элементами:</p>
             <Code>{`<RowStack verticalAlign="top" gap={4}>{/*...*/}</RowStack>`}</Code>
             <p>
@@ -184,6 +189,7 @@ export class DocumentationEntry extends React.Component {
                     </RowStack>
                 </div>
             </p>
+
             <p>Варианты использования verticalAlign:</p>
             <Code>{`<RowStack verticalAlign="baseline" gap={4}>{/*...*/}</RowStack>`}</Code>
             <p>
@@ -390,7 +396,8 @@ export class DocumentationEntry extends React.Component {
                     </ColumnStack>
                 </div>
             </p>
-            <p>Посмотрим варианты использования свойства horizontalAlign</p>
+
+            <p>Посмотрим варианты использования свойства horizontalAlign.</p>
             <Code>{`
                 <ColumnStack horizontalAlign="center" gap={5}>{/*...*/}</ColumnStack>
             `}
@@ -439,7 +446,7 @@ export class DocumentationEntry extends React.Component {
             </p>
             <p><strong>!!! Fixed для ColumnStack в версии 1.0.0 не применим !!!</strong></p>
             <p>
-                Fill растягивается на всю доступную ширину. Нужно помнить, что доступная ширина, выбирается для контейнера, а не для его родителя.
+                Fill растягивается на всю доступную ширину. Нужно помнить, что доступная ширина выбирается для контейнера, а не для его родителя.
                 В следующем примере зелёный элемент на растянул контейнер по высоте родителя.
             </p>
             <Code>{`
@@ -498,6 +505,7 @@ export class DocumentationEntry extends React.Component {
             <p>
                 Обычное расположение контролов из <Link href="https://github.com/skbkontur/retail-ui">react-ui</Link>.
             </p>
+            <h3>Пример 1. Контролы по базовой линии.</h3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fit><Input /></Fit>
@@ -514,6 +522,8 @@ export class DocumentationEntry extends React.Component {
                     </RowStack>
                 </div>
             </p>
+
+            <h3>Пример 2. Широкий инпут.</h3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fill><Input width="100%" /></Fill>
@@ -530,6 +540,8 @@ export class DocumentationEntry extends React.Component {
                     </RowStack>
                 </div>
             </p>
+
+            <h3>Пример 3. Ещё широкий инпут.</h3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fill><Input width="100%" /></Fill>
@@ -546,7 +558,27 @@ export class DocumentationEntry extends React.Component {
                     </RowStack>
                 </div>
             </p>
-            <p><Link href="mailto:tihonov.ea@gmail.com">Напишите мне</Link> если знаете, как пополнить список примеров.</p>
+
+            <h3>Пример 3. Элементы по краям.</h3>
+            <Code>{`
+                <RowStack baseline block gap={2}>
+                    <Fit><Button>Button 1</Button></Fit>
+                    <Fill />
+                    <Fit><Button>Button 2</Button></Fit>
+                    <Fit><Button>Button 3</Button></Fit>
+                </RowStack>
+            `}</Code>
+            <p>
+                <div>
+                    <RowStack baseline block gap={2}>
+                        <Fit><Button>Кнопка слева</Button></Fit>
+                        <Fill />
+                        <Fit><Button>Кнопка раз справа</Button></Fit>
+                        <Fit><Button>Кнопка два справа</Button></Fit>
+                    </RowStack>
+                </div>
+            </p>
+            <p><Link href="mailto:tihonov.ea@gmail.com">Напишите мне</Link>, если знаете, как пополнить список примеров.</p>
             <h2 id="bugs">Известные недостатки</h2>
             <ul>
                 <li>Иногда, да что там, часто, возникают лишние DOM-элементы (я готов заплатить за унификацию и ясность кода).</li>
@@ -571,11 +603,11 @@ export class DocumentationEntry extends React.Component {
                 </li>
                 <li>
                     <code>block?: boolean;</code>
-                    <p>Меняет display элмента на flex. По умочанию контейнер inline-flex.</p>
+                    <p>Меняет display элемента на flex. По умочанию контейнер inline-flex.</p>
                 </li>
                 <li>
                     <code>inline?: boolean;</code>
-                    <p>Меняет display элмента на inline-flex.</p>
+                    <p>Меняет display элемента на inline-flex.</p>
                 </li>
                 <li>
                     <code>gap?: number;</code>
@@ -596,11 +628,11 @@ export class DocumentationEntry extends React.Component {
                 </li>
                 <li>
                     <code>block?: boolean;</code>
-                    <p>Меняет display элмента на flex. По умочанию контейнер inline-flex.</p>
+                    <p>Меняет display элемента на flex. По умочанию контейнер inline-flex.</p>
                 </li>
                 <li>
                     <code>inline?: boolean;</code>
-                    <p>Меняет display элмента на inline-flex.</p>
+                    <p>Меняет display элемента на inline-flex.</p>
                 </li>
                 <li>
                     <code>gap?: number;</code>
@@ -610,7 +642,7 @@ export class DocumentationEntry extends React.Component {
 
 
             <h3>{`<Fit />`}</h3>
-            <p>Элемент-placeholder. Занимает пространство соотв. своему контенту</p>
+            <p>Элемент-placeholder. Занимает пространство соответсвующее своему контенту</p>
 
             <h3>{`<Fill />`}</h3>
             <p>Элемент-placeholder. Занимает все доступное пространство контейнера.</p>
@@ -618,8 +650,8 @@ export class DocumentationEntry extends React.Component {
             <h3>{`<Fixed />`}</h3>
             <p>Элемент-placeholder. Занимает заданный размер. Применим только внутри RowStack.</p>
             <ul>
-                <li>width: number;</li>
-                <p>Обязательный параметр. Соотв. ширине занимаемой в контейнере.</p>
+                <li><code>width: number;</code></li>
+                <p>Обязательный параметр. Соответствует ширине занимаемой в контейнере.</p>
             </ul>
         </div>;
     }
