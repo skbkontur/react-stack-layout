@@ -1,4 +1,5 @@
-# react-stack-layout
+# react-stack-layout ![npm](https://img.shields.io/npm/v/@skbkontur/react-stack-layout.svg)
+
 
 Библиотека для быстрого расположения контролов в вертикальный или горизонтальный стэки.
 По сути представляет собой [layout manager](https://en.wikipedia.org/wiki/Layout_manager) из мира Desktop приложений.
