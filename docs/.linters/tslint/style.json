@@ -1,0 +1,57 @@
+{
+    "rules": {
+        "array-type": [true, "array-simple"],
+        "arrow-return-shorthand": [true, "multiline"],
+        "binary-expression-operand-order": true,
+        "callable-types": true,
+        "class-name": true,
+        "comment-format": [
+            true,
+            "check-space",
+            "check-uppercase",
+            {"ignore-words": ["noinspection"]}
+        ],
+        "completed-docs": false,
+        "deprecation": true,
+        "encoding": true,
+        "interface-name": false,
+        "interface-over-type-literal": true,
+        "jsdoc-format": [true, "check-multiline-start"],
+        "match-default-export-name": true,
+        "newline-before-return": false,
+        "no-angle-bracket-type-assertion": true,
+        "no-boolean-literal-compare": true,
+        "no-parameter-properties": true,
+        "no-redundant-jsdoc": true,
+        "no-reference-import": true,
+        "no-unnecessary-callback-wrapper": true,
+        "no-unnecessary-initializer": true,
+        "no-unnecessary-qualifier": true,
+        "no-unnecessary-type-assertion": true,
+        "object-literal-shorthand": [true, "never"],
+        "one-variable-per-declaration": true,
+        "ordered-imports": [true, {
+            "import-sources-order": "lowercase-first",
+            "named-imports-order": "case-insensitive",
+            "module-source-path": "full",
+            "grouped-imports": true
+        }],
+        "prefer-function-over-method": false,
+        "prefer-method-signature": true,
+        "prefer-object-spread": true,
+        "prefer-switch": false,
+        "prefer-template": true,
+        "prefer-while": true,
+        "return-undefined": true,
+        "switch-final-break": [true, "always"],
+        "type-literal-delimiter": true,
+        "variable-name": [
+            true,
+            "allow-leading-underscore",
+            "allow-pascal-case",
+            "allow-snake-case",
+            "ban-keywords",
+            "check-format"
+        ]
+    }
+}

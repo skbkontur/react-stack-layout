@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/preset-typescript": "^7.0.0-beta.51",
+    "@skbkontur/react-ui": "^0.18.8",
     "@storybook/addon-actions": "^3.4.7",
     "@storybook/react": "^3.4.7",
     "@types/react": "^16.3.17",
