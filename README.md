@@ -57,3 +57,7 @@ import { ColumnStack, RowStack, Fill, Fit, Fixed } from "@skbkontur/react-stack-
 * [Сценарии использования](http://tech.skbkontur.ru/react-stack-layout/#usage)
 * [Известные недостатки](http://tech.skbkontur.ru/react-stack-layout/#bugs)
 * [API Reference](http://tech.skbkontur.ru/react-stack-layout/#api)
+
+## Поиграть на CodeSandbox
+
+[![Edit pmy55l4qrm](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pmy55l4qrm)
