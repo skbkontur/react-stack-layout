@@ -100,15 +100,15 @@ export class DocumentationEntry extends React.Component {
 
             <h3>Корневые элементы</h3>
             <ul>
-                <li>RowStack -- располагает дочерние элементы в строку</li>
-                <li>ColumnStack -- располагает дочерние элементы колонкой, друг под другом</li>
+                <li>RowStack — располагает дочерние элементы в строку</li>
+                <li>ColumnStack — располагает дочерние элементы колонкой, друг под другом</li>
             </ul>
 
             <h3>Placeholder-ы</h3>
             <ul>
-                <li>Fit -- принимает размер, соотвествующий своему контенту</li>
-                <li>Fill -- занимает всю доступную область</li>
-                <li>Fixed -- имеет фиксированные размер</li>
+                <li>Fit — принимает размер, соотвествующий своему контенту</li>
+                <li>Fill — занимает всю доступную область</li>
+                <li>Fixed — имеет фиксированные размер</li>
             </ul>
 
             <h2 id="how">Как использовать</h2>
@@ -158,14 +158,14 @@ export class DocumentationEntry extends React.Component {
             </p>
             <ul>
                 <li>
-                    <span className={cn("grey-border")}/> -- серой рамкой обозначен родительский элемент, в котором
+                    <span className={cn("grey-border")}/> — серой рамкой обозначен родительский элемент, в котором
                     находить контейнер
                 </li>
                 <li>
-                    <span className={cn("blue-border")}/> -- красной рамкой обозначен контейнер
+                    <span className={cn("blue-border")}/> — красной рамкой обозначен контейнер
                 </li>
                 <li>
-                    <span className={cn("red-border")}/> -- красной рамкой обозначен placeholder для контента
+                    <span className={cn("red-border")}/> — красной рамкой обозначен placeholder для контента
                 </li>
             </ul>
             <p>Таким образом, базовый пример выглядит так:</p>
@@ -212,7 +212,7 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
 
-            <p>Center -- не то же самое, что baseline :-)</p>
+            <p>Center — не то же самое, что baseline :-)</p>
             <Code>{`
                 <RowStack verticalAlign="center" gap={4}>{/*...*/}</RowStack>
             `}</Code>
@@ -414,7 +414,7 @@ export class DocumentationEntry extends React.Component {
                     </ColumnStack>
                 </div>
             </p>
-            <p>Stretch -- placeholder-ы растягиваются на ширину контейнера. Но не растягивают его самого</p>
+            <p>Stretch — placeholder-ы растягиваются на ширину контейнера. Но не растягивают его самого</p>
             <Code>{`
                 <ColumnStack horizontalAlign="stretch" gap={5}>{/*...*/}</ColumnStack>
             `}
