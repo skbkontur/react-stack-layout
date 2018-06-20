@@ -8,6 +8,7 @@ import Input from "@skbkontur/react-ui/components/Input/Input";
 import Button from "@skbkontur/react-ui/components/Button/Button";
 import Checkbox from "@skbkontur/react-ui/components/Checkbox/Checkbox";
 import Spinner from "@skbkontur/react-ui/components/Spinner/Spinner";
+import Icon from "@skbkontur/react-ui/components/Icon/Icon";
 
 const rowStackItems = [
     <Fit key={"1"} className={cn("item")}>
@@ -33,6 +34,47 @@ const items = [
     </Fit>,
 ];
 
+interface HeaderProps {
+    id?: string;
+    children: React.ReactNode;
+}
+
+function Header2({ children, id }: HeaderProps): JSX.Element {
+    if (id == undefined) {
+        return <h2>{children}</h2>
+    }
+    return (
+        <h2 id={id} className={cn("header")}>
+            <div className={cn("link")}><a href={`#${id}`}><Icon name="Link" /></a></div>
+            {children}
+        </h2>
+    )
+}
+
+function Header3({ children, id }: HeaderProps): JSX.Element {
+    if (id == undefined) {
+        return <h3>{children}</h3>
+    }
+    return (
+        <h3 id={id} className={cn("header")}>
+            <div className={cn("link")}><a href={`#${id}`}><Icon name="Link" /></a></div>
+            {children}
+        </h3>
+    )
+}
+
+function Header4({ children, id }: HeaderProps): JSX.Element {
+    if (id == undefined) {
+        return <h4>{children}</h4>
+    }
+    return (
+        <h4 id={id} className={cn("header")}>
+            <div className={cn("link")}><a href={`#${id}`}><Icon name="Link" /></a></div>
+            {children}
+        </h4>
+    )
+}
+
 export class DocumentationEntry extends React.Component {
     public render(): JSX.Element {
         return <div className={cn("root")}>
@@ -43,7 +85,7 @@ export class DocumentationEntry extends React.Component {
                 <RowStack block baseline>
                     <Fit>React Stack Layout</Fit>
                     <Fill />
-                    <Fit style={{ fontSize: "16px" }}>
+                    <Fit style={{ fontSize: "16px" }} className={cn("header-link")}>
                         <Link href="https://github.com/skbkontur/react-stack-layout">
                             GitHub repo
                         </Link>
@@ -55,7 +97,7 @@ export class DocumentationEntry extends React.Component {
                 По сути представляет собой <Link href="https://en.wikipedia.org/wiki/Layout_manager">layout manager</Link> из мира Desktop приложений.
             </p>
 
-            <h3>Оглавление</h3>
+            <Header3>Оглавление</Header3>
             <ul>
                 <li><Link href="#why">Обоснование</Link></li>
                 <li><Link href="#idea">Идея</Link></li>
@@ -72,7 +114,7 @@ export class DocumentationEntry extends React.Component {
                 <li><Link href="#api">API Reference</Link></li>
             </ul>
 
-            <h2 id="why">Обоснование</h2>
+            <Header2 id="why">Обоснование</Header2>
             <p>
                 Очень часто при разработке бизнес логики нужно быстро выстроить контролы горизонтально друг за другом,
                 вырывания их, например, по базовой линии, не забывая при этом, что между ними должно быть небольшое
@@ -86,31 +128,31 @@ export class DocumentationEntry extends React.Component {
                 Плюс ещё маленький бонус: такой код понятен любому.
             </p>
 
-            <h2 id="idea">Идея</h2>
+            <Header2 id="idea">Идея</Header2>
             <p>
                 Предположим, требуется расположить несколько контролов определённым образом. Вместо того, чтобы делать
                 добавочные стили к элементам, предлагается создать шаблон (или каркас) с placeholder-ами, внутри
                 которых разместить нужные элементы.
             </p>
 
-            <h2 id="what">Что имеем?</h2>
+            <Header2 id="what">Что имеем?</Header2>
 
-            <h3>Корневые элементы</h3>
+            <Header3>Корневые элементы</Header3>
             <ul>
                 <li>RowStack — располагает дочерние элементы в строку.</li>
                 <li>ColumnStack — располагает дочерние элементы колонкой, друг под другом.</li>
             </ul>
 
-            <h3>Placeholder-ы</h3>
+            <Header3>Placeholder-ы</Header3>
             <ul>
                 <li>Fit — принимает размер, соотвествующий своему контенту.</li>
                 <li>Fill — занимает всю доступную область.</li>
                 <li>Fixed — имеет фиксированный размер.</li>
             </ul>
 
-            <h2 id="how">Как использовать</h2>
+            <Header2 id="how">Как использовать</Header2>
 
-            <h3 id="install">Установка</h3>
+            <Header3 id="install">Установка</Header3>
 
             <Code>{`npm install @skbkontur/react-stack-layout`}</Code>
             <p>или</p>
@@ -119,7 +161,7 @@ export class DocumentationEntry extends React.Component {
             <Code>{`import { ColumnStack, RowStack, Fill, Fit, Fixed } from "@skbkontur/react-stack-layout";`}</Code>
 
 
-            <h3 id="row-stack">RowStack</h3>
+            <Header3 id="row-stack">RowStack</Header3>
 
             <p>
                 Располагает элементы в строку и имеет два основных свойства: <code>verticalAlign</code> и <code>gap</code>.
@@ -370,7 +412,7 @@ export class DocumentationEntry extends React.Component {
             </p>
             <p>В общем, с Fixed есть проблемы. Используйте аккуратно.</p>
 
-            <h3 id="column-stack">ColumnStack</h3>
+            <Header3 id="column-stack">ColumnStack</Header3>
             <p>Располагает элементы в столбик и имеет два основных свойства <code>horizontalAlign</code> и <code>gap</code>.</p>
             <ul>
                 <li>
@@ -492,7 +534,7 @@ export class DocumentationEntry extends React.Component {
                     </Fit>
                 </ColumnStack>
             </div>
-            <h3 id="shorthands">Shorthand properties</h3>
+            <Header3 id="shorthands">Shorthand properties</Header3>
             <p>Для частых случаев verticalAlign или horizontalAlign есть простые сокращения:</p>
             <Code>{`
                 <RowStack baseline />
@@ -501,11 +543,11 @@ export class DocumentationEntry extends React.Component {
             <Code>{`
                 <RowStack stretch />
             `}</Code>
-            <h2 id="usage">Сценарии использования</h2>
+            <Header2 id="usage">Сценарии использования</Header2>
             <p>
                 Обычное расположение контролов из <Link href="https://github.com/skbkontur/retail-ui">react-ui</Link>.
             </p>
-            <h3>Пример 1. Контролы по базовой линии.</h3>
+            <Header3>Пример 1. Контролы по базовой линии.</Header3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fit><Input /></Fit>
@@ -514,7 +556,7 @@ export class DocumentationEntry extends React.Component {
                 </RowStack>
             `}</Code>
             <p>
-                <div>
+                <div className={cn("example-block")}>
                     <RowStack baseline block gap={2}>
                         <Fit><Input /></Fit>
                         <Fit><Button use="primary">Поиск</Button></Fit>
@@ -523,7 +565,7 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
 
-            <h3>Пример 2. Широкий инпут.</h3>
+            <Header3>Пример 2. Широкий инпут.</Header3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fill><Input width="100%" /></Fill>
@@ -532,7 +574,7 @@ export class DocumentationEntry extends React.Component {
                 </RowStack>
             `}</Code>
             <p>
-                <div>
+                <div className={cn("example-block")}>
                     <RowStack baseline block gap={2}>
                         <Fill><Input width="100%" /></Fill>
                         <Fit><Button use="primary">Поиск</Button></Fit>
@@ -541,7 +583,7 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
 
-            <h3>Пример 3. Ещё широкий инпут.</h3>
+            <Header3>Пример 3. Ещё широкий инпут.</Header3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fill><Input width="100%" /></Fill>
@@ -550,7 +592,7 @@ export class DocumentationEntry extends React.Component {
                 </RowStack>
             `}</Code>
             <p>
-                <div>
+                <div className={cn("example-block")}>
                     <RowStack baseline block gap={2}>
                         <Fill><Input width="100%" /></Fill>
                         <Fit><Button use="primary" disabled>Поиск</Button></Fit>
@@ -559,7 +601,7 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
 
-            <h3>Пример 3. Элементы по краям.</h3>
+            <Header3>Пример 3. Элементы по краям.</Header3>
             <Code>{`
                 <RowStack baseline block gap={2}>
                     <Fit><Button>Button 1</Button></Fit>
@@ -569,7 +611,7 @@ export class DocumentationEntry extends React.Component {
                 </RowStack>
             `}</Code>
             <p>
-                <div>
+                <div className={cn("example-block")}>
                     <RowStack baseline block gap={2}>
                         <Fit><Button>Кнопка слева</Button></Fit>
                         <Fill />
@@ -579,7 +621,7 @@ export class DocumentationEntry extends React.Component {
                 </div>
             </p>
             <p><Link href="mailto:tihonov.ea@gmail.com">Напишите мне</Link>, если знаете, как пополнить список примеров.</p>
-            <h2 id="bugs">Известные недостатки</h2>
+            <Header2 id="bugs">Известные недостатки</Header2>
             <ul>
                 <li>Иногда, да что там, часто, возникают лишние DOM-элементы (я готов заплатить за унификацию и ясность кода).</li>
                 <li>есть несколько багов (help wanted!).</li>
@@ -587,11 +629,11 @@ export class DocumentationEntry extends React.Component {
                 <li>Fixed не работает с ColumnStack.</li>
             </ul>
 
-            <h2 id="api">API Reference</h2>
+            <Header2 id="api">API Reference</Header2>
 
-            <h3>{`<RowStack />`}</h3>
+            <Header3>{`<RowStack />`}</Header3>
             <p>Контейнерынй элемент, внутри которого непосредственными детьми должны располагаться placeholder-ы (Fit, Fixed или Fill). Располагает элементы горизонтально.</p>
-            <h4>Props</h4>
+            <Header4>Props</Header4>
             <ul>
                 <li>
                     <code>verticalAlign?: "top" | "bottom" | "center" | "baseline" | "stretch";</code>
@@ -615,7 +657,7 @@ export class DocumentationEntry extends React.Component {
                 </li>
             </ul>
 
-            <h3>{`<ColumnStack />`}</h3>
+            <Header3>{`<ColumnStack />`}</Header3>
             <p>Контейнерынй элемент, внутри которого непосредственными детьми должны располагаться placeholder-ы (Fit или Fill). Располагает элементы столбцом.</p>
             <ul>
                 <li>
@@ -641,13 +683,13 @@ export class DocumentationEntry extends React.Component {
             </ul>
 
 
-            <h3>{`<Fit />`}</h3>
+            <Header3>{`<Fit />`}</Header3>
             <p>Элемент-placeholder. Занимает пространство соответсвующее своему контенту</p>
 
-            <h3>{`<Fill />`}</h3>
+            <Header3>{`<Fill />`}</Header3>
             <p>Элемент-placeholder. Занимает все доступное пространство контейнера.</p>
 
-            <h3>{`<Fixed />`}</h3>
+            <Header3>{`<Fixed />`}</Header3>
             <p>Элемент-placeholder. Занимает заданный размер. Применим только внутри RowStack.</p>
             <ul>
                 <li><code>width: number;</code></li>

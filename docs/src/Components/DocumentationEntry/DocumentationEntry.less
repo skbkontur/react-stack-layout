@@ -1,6 +1,38 @@
 @import "../../Styles/Reset.less";
 @import "../../Styles/Typography.less";
 
+@media screen and (max-width: 768px) {
+    .root {
+        max-width: 100%;
+        margin: 0;
+        padding: 60px 20px 0 20px;
+    }
+
+    .header-link {
+        display: none;
+    }
+
+    .root-item-h {
+        max-width: 100% !important;
+    }
+
+    .root-item {
+        max-width: 100% !important;
+    }
+
+    code, pre {
+        white-space: pre-wrap !important;
+    }
+
+    .root-item {
+        overflow: hidden;
+    }
+
+    .example-block {
+        overflow: hidden;
+    }
+}
+
 .root {
     margin: 0 auto;
     max-width: 900px;
@@ -12,17 +44,6 @@
         white-space: nowrap;
         padding: 0 3px;
     }
-}
-
-.cs-root {
-    width: 400px;
-    margin: 32px 0;
-}
-
-.cs-root-h {
-    width: 400px;
-    margin: 32px 0;
-
 }
 
 .root-item-h {
@@ -93,4 +114,28 @@
     background-color: #4174ff;
     padding: 10px 50px 20px;
     color: white;
+}
+
+.header {
+    position: relative;
+    padding-left: 50px;
+    margin-left: -50px;
+
+    .link {
+        display: none;
+        position: absolute;
+        left: 50px;
+
+        a {
+            color: #333;
+            position: absolute;
+            right: 16px;
+        }
+    }
+
+    &:hover {
+        .link {
+            display: block;
+        }
+    }
 }
