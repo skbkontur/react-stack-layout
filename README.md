@@ -3,7 +3,7 @@
 Библиотека для быстрого расположения контролов в вертикальный или горизонтальный стэки.
 По сути представляет собой [layout manager](https://en.wikipedia.org/wiki/Layout_manager) из мира Desktop приложений.
 
-## [Документация](http://tech.skbkontur.ru/react-stack-layout/)
+### [Документация](http://tech.skbkontur.ru/react-stack-layout/)
 
 ## Обоснование
 
