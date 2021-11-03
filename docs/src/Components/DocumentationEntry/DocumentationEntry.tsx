@@ -109,7 +109,8 @@ export class DocumentationEntry extends React.Component {
                     <li><Link href="#column-stack">ColumnStack</Link></li>
                     <li><Link href="#shorthands">Shorthand properties</Link></li>
                 </ul>
-                <li><Link href="#usage">Сценарии использования</Link></li>
+                <li><Link href="#usage">Примеры использования</Link></li>
+                <li><Link href="#use-cases">Сценарии и особенности использования</Link></li>
                 <li><Link href="#bugs">Известные недостатки</Link></li>
                 <li><Link href="#api">API Reference</Link></li>
             </ul>
@@ -543,7 +544,7 @@ export class DocumentationEntry extends React.Component {
             <Code>{`
                 <RowStack stretch />
             `}</Code>
-            <Header2 id="usage">Сценарии использования</Header2>
+            <Header2 id="usage">Примеры использования</Header2>
             <p>
                 Обычное расположение контролов из <Link href="https://github.com/skbkontur/retail-ui">react-ui</Link>.
             </p>
@@ -627,6 +628,16 @@ export class DocumentationEntry extends React.Component {
                 <li>есть несколько багов (help wanted!).</li>
                 <li>Проблемы с вертикальным Fill. Пользоваться им иногда не очень удобно.</li>
                 <li>Fixed не работает с ColumnStack.</li>
+            </ul>
+
+            <Header2 id="use-cases">Сценарии и особенности использования</Header2>
+
+            <p>Ещё несколько слов об использовании:</p>
+
+            <ul>
+                <li>Контейнеры не являются заменой обычной верстки. Не следует верстать сложные и хитрые компоненты.</li>
+                <li>Использование компонентов должно упрощать верстку, а не усложнять её.</li>
+                <li>В исходном коде одной компоненты не следует использовать больше трёх, максимум четырёх, уровней вложенности компонент.</li>
             </ul>
 
             <Header2 id="api">API Reference</Header2>
