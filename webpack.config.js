@@ -17,17 +17,15 @@ const config = {
     },
     module: {
         rules: [
-            { test: /\.(tsx?|jsx?)$/, use: "babel-loader", exclude: [/node_modules/] },
+            { test: /\.(tsx?)$/, use: "babel-loader", include: [path.join(__dirname, "src")] },
             {
-                  test: /\.less$/,
-                  use: [
-                      "classnames-loader",
-                      "style-loader",
-                      { loader: "css-loader", options: { modules: true, localIdentName: "rsl-[hash:base64:3]" } },
-                      "less-loader",
-                  ],
-                  exclude: ["node_modules"],
-              },
+                test: /\.less$/,
+                use: [
+                    { loader: "style-loader", options: { injectType: "lazyStyleTag" } },
+                    { loader: "css-loader", options: {modules: {localIdentName: "rsl-[hash:base64:3]"}}},
+                    "less-loader",
+                ], include: [path.join(__dirname, "src")]
+            },
         ],
     },
     resolve: {
@@ -37,10 +35,12 @@ const config = {
         react: "react",
     },
     plugins: [
-        new CopyWebpackPlugin([{
-            from: "./src/index.d.ts",
-            to: "index.d.ts",
-        }]),
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: "./src/index.d.ts",
+                to: "index.d.ts",
+            }]
+        }),
     ],
 };
 

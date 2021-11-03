@@ -1,8 +1,14 @@
 import * as React from "react";
+import classnames from "classnames/bind";
+import styles from "./index.less";
 
-import cn from "./index.less";
+const cn = classnames.bind(styles.locals);
 
 type VerticalAlign = "top" | "bottom" | "center" | "baseline" | "stretch";
+
+if (typeof window !== "undefined") {
+    styles.use();
+}
 
 interface RowStackProps {
     tag?: string | React.ComponentType;
@@ -39,6 +45,7 @@ export class RowStack extends React.Component<RowStackProps> {
     }
 
     public render(): JSX.Element {
+        init();
         const {
             tag,
             children,
@@ -104,6 +111,7 @@ export class ColumnStack extends React.Component<ColumnStackProps> {
     }
 
     public render(): JSX.Element {
+        init();
         const {
             tag,
             children,
