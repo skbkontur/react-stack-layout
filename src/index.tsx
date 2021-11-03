@@ -45,7 +45,6 @@ export class RowStack extends React.Component<RowStackProps> {
     }
 
     public render(): JSX.Element {
-        init();
         const {
             tag,
             children,
@@ -111,7 +110,6 @@ export class ColumnStack extends React.Component<ColumnStackProps> {
     }
 
     public render(): JSX.Element {
-        init();
         const {
             tag,
             children,
