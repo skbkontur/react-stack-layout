@@ -10,6 +10,7 @@ const config = {
     entry: {
         index: ["./src/index"],
     },
+    target: ["web", "es5"],
     output: {
         path: path.join(__dirname, "dist"),
         filename: "[name].js",
